@@ -1,0 +1,5 @@
+ lr_columns->set_column_position( 'POSIRESERVADA' ). "COGER SOLO LA COLUMNA DE POSIRESERVADA
+  gr_column ?= lr_columns->get_column( 'POSIRESERVADA' ). "METER ESA COLUMNA EN GR_COLUMN
+  gr_column->set_short_text( 'Pos Res' ). "CAMBIAR EL SHORT
+  gr_column->set_medium_text( 'Posi Reserv' ). "CAMBIAR EL MEDIUM
+  gr_column->set_long_text( 'Posicion Reservada' ). "CAMBIAR EL LONG
