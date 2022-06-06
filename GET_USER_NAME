@@ -1,0 +1,12 @@
+DATA NOME TYPE STRING.
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>GET_USER_NAME
+ CHANGING
+ USER_NAME = NOME
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ NOT_SUPPORTED_BY_GUI = 3
+ Others = 4.
+ WRITE NOME.
+*USER_NAME = Retorna uma variável do tipo string contendo o nome do usuário logado no sistema.
+*Obs.: A variável sy-uname, armazena está mesma informação, sendo mais rápido utilizar está variável do que o método. 
