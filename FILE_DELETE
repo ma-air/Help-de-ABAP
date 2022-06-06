@@ -1,0 +1,18 @@
+DATA: RC TYPE I.
+ CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_DELETE
+ EXPORTING
+ FILENAME = 'C:\test.txt'
+ CHANGING
+ RC = RC
+ EXCEPTIONS
+ FILE_DELETE_FAILED = 1
+ CNTL_ERROR = 2
+ ERROR_NO_GUI = 3
+ FILE_NOT_FOUND = 4
+ ACCESS_DENIED = 5
+ UNKNOWN_ERROR = 6
+ NOT_SUPPORTED_BY_GUI = 7
+ WRONG_PARAMETER = 8
+ Others = 9.
+*FILENAME = Recebe uma Variável do tipo string contendo o nome do arquivo, concatenado do caminho.
+*RC = Variável do tipo I, que indicará com 1 quando a ação do método foi realizada com sucesso e 0 insucesso. 
