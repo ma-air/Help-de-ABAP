@@ -1,0 +1,15 @@
+DATA: V_RESULT(1) TYPE C.
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_EXIST
+ EXPORTING
+ FILE = 'C:\audio\Speclab\INSTALL.LOG'
+ RECEIVING
+ RESULT = V_RESULT
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ WRONG_PARAMETER = 3
+ NOT_SUPPORTED_BY_GUI = 4
+ Others = 5.
+ WRITE V_RESULT.
+*FILE = Recebe uma Variável do tipo string contendo o nome do arquivo, concatenado do caminho.
+*RESULT = Retorna uma 1 caso existe e 0 quando o arquivo não existir, está variável é do tipo I. 
