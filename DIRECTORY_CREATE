@@ -1,0 +1,23 @@
+DATA RC TYPE I.
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>DIRECTORY_CREATE
+ EXPORTING
+ DIRECTORY = 'C:\teste'
+ CHANGING
+ RC = RC
+ EXCEPTIONS
+ DIRECTORY_CREATE_FAILED = 1
+ CNTL_ERROR = 2
+ ERROR_NO_GUI = 3
+ DIRECTORY_ACCESS_DENIED = 4
+ DIRECTORY_ALREADY_EXISTS = 5
+ PATH_NOT_FOUND = 6
+ UNKNOWN_ERROR = 7
+ NOT_SUPPORTED_BY_GUI = 8
+ WRONG_PARAMETER = 9
+ Others = 10.
+WRITE RC.
+*DIRECTORY = Recebe o caminho do diretório a ser criado, lembrando que um diretório somente é um diretório se ele for criado diretamente na RAIZ, por exemplo, a RAIZ do SO Windows é uma letra
+*ALFABETICA, geralmente “C:” para a primeira partição do disco rígido e assim prossegue para as demais partições ou drives, com exceção ao drive de disquete que se inicia na RAIZ “A:”. Para SO “LINUX, UNIX”, e outro que 
+*seguem o padrão UNIX a RAIZ é iniciada pela letra “/” independente da partição, somente mudando para os drives externos. Com estes este conceito em mente, quando é criando um diretório que não esteja em uma RAIZ mais
+*sim dentro de um diretório, este é chamado de subdiretório. O tipo de dados de entrada é uma variável do tipo string
+*RC = Retorna uma variável do tipo I contendo informação sobre a criação do Diretório ou Subdiretório.
