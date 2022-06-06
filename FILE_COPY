@@ -1,0 +1,21 @@
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_COPY
+ EXPORTING
+ SOURCE = 'C:\audio\Speclab\INSTALL.LOG'
+ DESTINATION = 'C:\ INSTALL.LOG '
+ OVERWRITE = 'X'
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ WRONG_PARAMETER = 3
+ DISK_FULL = 4
+ ACCESS_DENIED = 5
+ FILE_NOT_FOUND = 6
+ DESTINATION_EXISTS = 7
+ UNKNOWN_ERROR = 8
+ PATH_NOT_FOUND = 9
+ DISK_WRITE_PROTECT = 10
+ DRIVE_NOT_READY = 11
+ NOT_SUPPORTED_BY_GUI = 12
+ Others = 13.
+*SOURCE = Recebe o caminho e o nome do arquivo a ser copiado, deve ser uma variável do tipo string.
+*DESTINATION = Recebe o caminho e o nome que o arquivo terá quando ser copiado para este destino, o nome do arquivo não necessita ser o mesmo do SOUCE (ORIGEM). 
