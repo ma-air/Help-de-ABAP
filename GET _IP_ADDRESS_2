@@ -1,0 +1,12 @@
+DATA IP(100) TYPE C.
+CALL FUNCTION 'RFC_HOST_TO_IP'
+ EXPORTING
+ RFCHOST = 'treinamento03'
+ IMPORTING
+ RFCIP = IP
+ EXCEPTIONS
+ HOST_TO_IP_CONVERSION_ERROR = 1
+ OTHERS = 2.
+ WRITE: IP.
+ *RFCHOST = Recebe como entrada o HOSTNAME do tipo C de 100.
+*RFCIP = Retorna o IP relativo ao HOSTNAME, o retorno é do tipo C de 100
