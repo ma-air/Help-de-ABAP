@@ -1,0 +1,15 @@
+DATA : SIZE TYPE I .
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_GET_SIZE
+ EXPORTING
+ FILE_NAME = 'C:\ping.txt'
+ IMPORTING
+ FILE_SIZE = SIZE
+ EXCEPTIONS
+ FILE_GET_SIZE_FAILED = 1
+ CNTL_ERROR = 2
+ ERROR_NO_GUI = 3
+ NOT_SUPPORTED_BY_GUI = 4
+ Others = 5.
+ WRITE: / SIZE.
+*FILENAME = Recebe uma Variável do tipo string contendo o nome do arquivo, concatenado do caminho.
+*FILE_SIZE = Recebe uma variável do tipo I que será carregada pelo método como tamanho do arquivo especificado. 
