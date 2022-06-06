@@ -1,0 +1,15 @@
+DATA RESULT TYPE C.
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>DIRECTORY_EXIST
+ EXPORTING
+ DIRECTORY = 'C:\teste'
+ RECEIVING
+ RESULT = RESULT
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ WRONG_PARAMETER = 3
+ NOT_SUPPORTED_BY_GUI = 4
+ Others = 5.
+ WRITE RESULT.
+*DIRECTORY = Recebe o caminho e o nome do diretório a ser verificado, sendo uma variável do tipo string.
+*RESULT = Retorna uma variável do tipo c de 1 contendo a informação da verificação. 
