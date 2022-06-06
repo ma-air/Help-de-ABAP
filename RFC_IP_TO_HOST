@@ -1,0 +1,12 @@
+DATA HOST (100) TYPE C.
+CALL FUNCTION 'RFC_IP_TO_HOST'
+ EXPORTING
+ RFCIP = '192.168.0.3'
+ IMPORTING
+ RFCHOST = HOST
+ EXCEPTIONS
+ IP_TO_HOST_CONVERSION_ERROR = 1
+ OTHERS = 2.
+ WRITE: HOST.
+*RFCIP = Recebe uma variável do tipo c de 100, contendo IP.
+*RFCHOST = Retorna uma variável do tipo c de 100, contendo o HOSTNAME relativo ao IP de entrada. 
