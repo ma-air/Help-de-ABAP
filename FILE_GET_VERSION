@@ -1,0 +1,18 @@
+
+ DATA VERSION TYPE STRING.
+ CLEAR VERSION .
+ CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_GET_VERSION
+ EXPORTING
+ FILENAME = 'C:\Adobe\Reader.0\Reader\AdobeUpdateCheck.exe'
+ CHANGING
+ VERSION = VERSION
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ NOT_SUPPORTED_BY_GUI = 3
+ WRONG_PARAMETER = 4
+ OTHERS = 5.
+ WRITE: / VERSION. 
+ 
+ *FILENAME = Nome do arquivo a ser consultado
+*VERSION = Variável do tipo string que recebe a versão do arquivo consultado
