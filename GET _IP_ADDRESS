@@ -1,0 +1,11 @@
+DATA: IP TYPE STRING.
+ CALL METHOD CL_GUI_FRONTEND_SERVICES=>GET_IP_ADDRESS
+ RECEIVING
+ IP_ADDRESS = IP
+ EXCEPTIONS
+ CNTL_ERROR = 1
+ ERROR_NO_GUI = 2
+ NOT_SUPPORTED_BY_GUI = 3
+ OTHERS = 4.
+ WRITE: / IP. 
+ *IP_ADDRESS = retorna uma variável do tipo String contendo IP da maquina que o FrontEnd Roda. 
